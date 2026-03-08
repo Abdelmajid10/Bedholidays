@@ -1,0 +1,33 @@
+const houses = [
+    {
+        title: "Beach House",
+        price: "$120/night",
+        image: "https://via.placeholder.com/300"
+    },
+    {
+        title: "Mountain Cabin",
+        price: "$90/night",
+        image: "https://via.placeholder.com/300"
+    },
+    {
+        title: "City Apartment",
+        price: "$150/night",
+        image: "https://via.placeholder.com/300"
+    }
+];
+
+const listings = document.getElementById("listings");
+
+houses.forEach(house => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+        <img src="${house.image}">
+        <h3>${house.title}</h3>
+        <p>${house.price}</p>
+        <button>Book Now</button>
+    `;
+
+    listings.appendChild(card);
+});
